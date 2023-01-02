@@ -1,0 +1,11 @@
+#!/bin/bash
+apt update
+apt upgrade
+apt install isc-dhcp-server
+vi /etc/default/isc-dhcp-server
+Décommenter DHCPDv4_CONF=/etc/dhcp/dhcpd.conf
+INTERFACESv4="enp23s0"
+INTERFACESv6="enp23s0"
+ip addr
+systemctl start isc-dhcp-server
+systemctl enable isc-dhcp-server
